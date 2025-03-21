@@ -1,0 +1,198 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #48A30012;
+    font-family: "Poppins", sans-serif;
+    margin: 0;
+}
+
+main {
+    margin: 0 auto;
+    max-width: 650px;
+    padding-bottom: 20px;
+}
+
+.title {
+    font-size: 64px;
+    color: #48A300;
+    text-align: center;
+}
+
+.today-text {
+    color: #61481C;
+}
+
+.goal-card {
+    background-color: #FBFBFB;
+    padding: 20px 40px;
+    border-radius: 14px;
+}
+
+.card-title {
+    font-size: 32px;
+}
+
+.card-title-n-img, .img-div {
+    display: flex;
+    align-items: center;
+}
+
+.img-div {
+    margin-left: 20px;
+}
+
+
+.motivational-text {
+    color: #858585;
+    font-size: 14px;
+}
+
+.goal-tracker {
+    max-width: 570px;
+    width: 100%;
+    height: 30px;
+    background-color: #48A3001A;
+    border-radius: 14px;
+    margin-block: 20px;
+}
+
+.tracker {
+    width: 0;
+    height: 100%;
+    background-color: #48A300;
+    border-radius: 14px;
+    transition: width 0.25s ease-in-out;
+}
+
+.tracking-text {
+    font-size: 10px;
+    font-weight: 500;
+    color: #EEFFE0;
+    padding-left: 20px;
+}
+
+.notice {
+    color: #FF5151;
+    font-size: 14px;
+}
+
+.goal-box {
+    max-width: 570px;
+    width: 100%;
+    height: 80px;
+    background-color: #FFFFFF;
+    border: 1px solid #0000001A;
+    border-radius: 16px;
+    display: flex;
+    align-items: center;
+    margin-bottom: 46px;
+}
+
+.checkbox {
+    width: 24px;
+    height: 24px;
+    border: 2px solid #61481C4D;
+    border-radius: 100%;
+    margin-left: 20px;
+    flex-shrink: 0;
+    cursor: pointer;
+}
+
+.input-text {
+    border: none;
+    outline: none;
+    align-self: stretch;
+    padding-left: 20px;
+    width: 100%;
+    font-size: 16px;
+    font-weight: 500;
+    font-family: inherit;
+    border-radius: 16px;
+}
+
+.input-text::placeholder {
+    color: #D9D9D9;
+}
+
+.quote {
+    text-align: center;
+    font-weight: 500;
+}
+
+.btn {
+    background-color: #48A300;
+    border: none;
+    padding: 8px 28px;
+    border-radius: 14px;
+    color: #FFFFFF;
+    font-family: inherit;
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+.add-n-reset-btn {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-inline: 20px;
+}
+
+.completed .checkbox {
+    background-color: #48A300;
+    border-color: #48A300;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.completed .input-text {
+    color: #48A300;
+    text-decoration: line-through;
+}
+
+.check-icon {
+    opacity: 0;
+}
+
+.completed .check-icon {
+    opacity: 1;
+}
+
+.goal-text {
+    padding-left: 20px;
+}
+
+.hidden {
+    visibility: hidden;
+}
+
+.extra-input .remove {
+    display: none;
+}
+
+@media (max-width: 768px) {
+    .goal-card {
+        padding: 20px 20px;
+    }
+
+    .title {
+        font-size: 42px;
+    }
+
+    .card-title {
+        font-size: 28px;
+    }
+    
+    .goal-box {
+        margin-bottom: 32px;
+    }
+
+    .tracking-text {
+        padding-left: 8px;
+        font-weight: 500;
+        font-size: 8px;
+    }
+}
