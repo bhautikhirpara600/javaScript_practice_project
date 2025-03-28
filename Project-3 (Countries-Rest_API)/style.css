@@ -130,7 +130,8 @@ main {
 }
 
 .flag-img-div {
-    width: 100%
+    width: 100%;
+    display: flex;
 }
 
 .flag-img {

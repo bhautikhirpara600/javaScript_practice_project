@@ -6,27 +6,12 @@ dropdownMenu.addEventListener("click", () => {
     dropdownContainer.classList.toggle("show")
 })
 
-// function makeCard() {
-//     const countryCard = document.createElement("a")
-//     countryCard.classList.add("country-card", "clickable")
-//     countryCard.innerHTML = `
-//         <div class="flag-img-div">
-//             <img class="flag-img">
-//         </div>
-//         <div class="country-card-text">
-//             <h3>India</h3>
-//             <p><b>Population:</b> <span class="population"></span></p>
-//             <p><b>Region:</b> <span class="region"></span></p>
-//             <p><b>Capital:</b> <span class="capital"></span></p>
-//         </div>
-//     `
-//     return countryCard
-// }
-
-fetch ('https://restcountries.com/v3.1/all').then(res => res.json())
+fetch ('https://restcountries.com/v3.1/all')
+    .then(res => res.json())
     .then(data => {
         data.forEach((country) => {
-            // console.log(country);
+            // console.log(country.name.common);
+            // console.log(country.borders);
             const countryCard = document.createElement("a")
             countryCard.classList.add("country-card", "clickable")
             countryCard.href = `/country.html?name=${country.name.common}`
