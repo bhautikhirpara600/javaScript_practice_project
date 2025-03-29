@@ -12,13 +12,45 @@ const currencyEl = document.querySelector(".currency")
 const languageEl = document.querySelector(".language")
 const borderCountryDiv = document.querySelector(".border-country")
 const homeEl = document.querySelector(".home")
+const mode = document.querySelector(".mode")
+const modeText = document.querySelector(".mode-text")
+const modeIcon = document.querySelector("#mode-icon")
+
+const checkMode = JSON.parse(localStorage.getItem("myMode")) || {}
+
+if(checkMode.dark) {
+    document.body.classList.add("dark")
+} else {
+    modeText.innerText = "Light"
+    modeIcon.classList.remove("fa-moon")
+    modeIcon.classList.add("fa-sun")
+}
+
+mode.addEventListener("click", () => {
+    document.body.classList.toggle("dark")
+    if(document.body.className === "dark") {
+        const checkMode = { dark: true }
+        modeText.innerText = "Dark"
+        modeIcon.classList.remove("fa-sun")
+        modeIcon.classList.add("fa-moon")
+        localStorage.setItem("myMode", JSON.stringify(checkMode))
+    } else {
+        const checkMode = { dark: false }
+        modeText.innerText = "Light"
+        modeIcon.classList.remove("fa-moon")
+        modeIcon.classList.add("fa-sun")
+        localStorage.setItem("myMode", JSON.stringify(checkMode))
+    }
+})
 
 backBtn.addEventListener("click", () => history.back())
 homeEl.addEventListener("click", () => location.href = "/")
 
-fetch(`https://restcountries.com/v3.1/name/${countryName}`)
+fetch(`https://restcountries.com/v3.1/all`)
     .then(res => res.json())
-    .then(([country]) => {
+    .then((data) => {
+        const countryArr = data.filter((countryObj) => countryObj.name.common === countryName )
+        const [country] = countryArr
         flagImgEl.src = country.flags.svg
         flagImgEl.alt = `${country.name.common}-flag`
         countryNameEl.innerText = `${country.name.common}`
