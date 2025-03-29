@@ -81,7 +81,7 @@ fetch(`https://restcountries.com/v3.1/all`)
                     .then(res => res.json())
                     .then(([borderCountry]) => {
                         const borderCountryHtml = `
-                        <a class="clickable country-text" href="http://127.0.0.1:5500/country.html?name=${borderCountry.name.common}">${borderCountry.name.common}</a>
+                        <a class="clickable country-text" href="/country.html?name=${borderCountry.name.common}">${borderCountry.name.common}</a>
                     `
                     borderCountryDiv.innerHTML += borderCountryHtml
                 })
