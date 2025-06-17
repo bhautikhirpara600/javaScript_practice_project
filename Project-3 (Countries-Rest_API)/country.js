@@ -46,7 +46,7 @@ mode.addEventListener("click", () => {
 backBtn.addEventListener("click", () => history.back())
 homeEl.addEventListener("click", () => location.href = "/")
 
-fetch(`https://restcountries.com/v3.1/all`)
+fetch(`https://restcountries.com/v3.1/independent?status=true`)
     .then(res => res.json())
     .then((data) => {
         const countryArr = data.filter((countryObj) => countryObj.name.common === countryName )
